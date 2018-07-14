@@ -22,3 +22,29 @@ describe('trie', () => {
     expect(trie.count).to.equal(0);
   });
 });
+
+describe('insert', () => {
+  let trie;
+
+  beforeEach(() => {
+    trie = new Trie();
+  })
+
+  it('should exist', () => {
+    expect(trie.insert).to.exist;
+  })
+
+  it('should increment word count of the trie by 1', () => {
+    expect(trie.count).to.equal(0);
+    trie.insert('word');
+    expect(trie.count).to.equal(1);
+  })
+  
+  it('should not increment word count when inserting duplicate words', () => {
+    trie.insert('cat');
+    trie.insert('dog');
+    trie.insert('cat');
+
+    expect(trie.count).to.equal(2);
+  })
+})
