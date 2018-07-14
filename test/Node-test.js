@@ -1,19 +1,18 @@
-import { expect } from 'chai';
+const { expect } = require('chai');
 import Node from '../lib/Node';
 
-describe('node,' () => {
-
+describe('Node', () => {
   let node;
 
   beforeEach(() => {
     node = new Node();
-  });
+  })
 
   it('should exist', () => {
     expect(node).to.exist;
-  });
+  })
 
-  it('should have a default property of completed word set to null', () => {
+  it('should have a default property of completed set to null', () => {
     expect(node.completed).to.equal(null);
   });
 
