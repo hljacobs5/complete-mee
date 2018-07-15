@@ -39,12 +39,30 @@ describe('insert', () => {
     trie.insert('word');
     expect(trie.count).to.equal(1);
   })
-  
+
   it('should not increment word count when inserting duplicate words', () => {
     trie.insert('cat');
     trie.insert('dog');
     trie.insert('cat');
 
     expect(trie.count).to.equal(2);
+  })
+})
+
+describe('suggest', () => {
+  let trie;
+
+  beforeEach(() => {
+    trie = new Trie();
+  })
+
+  it('should exist', () => {
+    expect(trie.suggest).to.exist;
+  })
+})
+
+describe('select', () => {
+  it('should increase the popularity count of given word', () => {
+    expect()
   })
 })
