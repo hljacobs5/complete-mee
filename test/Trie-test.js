@@ -76,7 +76,7 @@ describe('POPULATE', () => {
   })
 
   it('should add an array of words to trie', () => {
-    
+
   })
 
   it('should increase trie word count to 234371', () => {
@@ -122,13 +122,4 @@ describe('DELETE', () => {
 
     expect(trie.count).to.equal(1)
   })
-
-  it('should remove any nodes that no longer lead to a completed word', () => {
-
-  })
 })
-// describe('select', () => {
-//   it('should increase the popularity count of given word', () => {
-//     expect()
-//   })
-// })
