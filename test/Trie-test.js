@@ -23,6 +23,7 @@ describe('trie', () => {
 
   it('should have a count property defaulted to 0', () => {
     expect(trie.count).to.equal(0);
+    // console.log(JSON.stringify(trie, null, 4))
   });
 });
 
@@ -49,6 +50,7 @@ describe('INSERT', () => {
     trie.insert('cat');
 
     expect(trie.count).to.equal(2);
+    // console.log(JSON.stringify(trie, null, 4))
   })
 })
 
@@ -62,6 +64,29 @@ describe('SUGGEST', () => {
   it('should exist', () => {
     expect(trie.suggest).to.exist;
   })
+
+  it('should take a prefix', () => {  
+    trie.insert('dog');
+    trie.insert('cat');
+    trie.insert('doggo');
+    trie.insert('doggy');
+    trie.insert('dog')
+    console.log(trie.suggest('do'))
+    console.log(JSON.stringify(trie, null, 4))
+    expect(true).to.equal(true);
+  });
+
+  // it('should return an array of results', () => {
+  //   trie.insert('cat');
+  //   trie.insert('catty');
+  //   trie.insert('cats');
+  //   trie.insert('category');
+  //   trie.insert('cricket');
+
+  //   trie.suggest('cat');
+  //   expect(trie.suggestions.length).to.equal(4)
+
+  // })
 })
 
 describe('POPULATE', () => {
@@ -120,6 +145,7 @@ describe('DELETE', () => {
     trie.insert('help');
     trie.delete('help');
 
+    console.log(JSON.stringify(trie, null, 4))
     expect(trie.count).to.equal(1)
   })
 })
